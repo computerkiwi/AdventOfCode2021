@@ -39,17 +39,26 @@ int main()
     int prev = INT_MAX;
     int count = 0;
 
+    std::vector<int> nums;
+
     for (const std::string& line : lines)
     {
         int num;
         std::stringstream(line) >> num;
+        nums.push_back(num);
+    }
 
-        if (num > prev)
+
+    for (int i = 0; i < nums.size() - 2; ++i)
+    {
+        int sum = nums[i] + nums[i + 1] + nums[i + 2];
+
+        if (sum > prev)
         {
             ++count;
         }
 
-        prev = num;
+        prev = sum;
     }
 
     outFile << count;
