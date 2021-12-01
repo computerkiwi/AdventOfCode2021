@@ -36,11 +36,23 @@ int main()
     std::vector<std::string> lines = GetLinesFromFile("input.txt");
     std::ofstream outFile("output.txt");
 
+    int prev = INT_MAX;
+    int count = 0;
+
     for (const std::string& line : lines)
     {
-        std::cout << line << '\n';
-        outFile << line << '\n';
+        int num;
+        std::stringstream(line) >> num;
+
+        if (num > prev)
+        {
+            ++count;
+        }
+
+        prev = num;
     }
+
+    outFile << count;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
