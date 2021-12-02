@@ -12,6 +12,8 @@ void Day2()
     int hPos = 0;
     int depth = 0;
 
+    int aim = 0;
+
     for (const std::string& str : lines)
     {
         std::stringstream stream(str, std::stringstream::in);
@@ -25,14 +27,15 @@ void Day2()
         if (command == "forward")
         {
             hPos += num;
+            depth += aim * num;
         }
         else if (command == "down")
         {
-            depth += num;
+            aim += num;
         }
         else if (command == "up")
         {
-            depth -= num;
+            aim -= num;
         }
     }
 
