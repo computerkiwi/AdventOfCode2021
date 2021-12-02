@@ -5,7 +5,7 @@
 #include <fstream>
 #include <sstream>
 
-std::vector<std::string> GetLinesFromFile(const std::string& filename, bool clearTrailingWhitespace = true)
+static std::vector<std::string> GetLinesFromFile(const std::string& filename, bool clearTrailingWhitespace = true)
 {
     std::vector<std::string> outVec;
 

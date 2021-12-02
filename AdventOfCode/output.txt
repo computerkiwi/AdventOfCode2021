@@ -1,4 +1,1 @@
-Part 1 count:
-1195
-Part 2 count:
-1235
+1893605
