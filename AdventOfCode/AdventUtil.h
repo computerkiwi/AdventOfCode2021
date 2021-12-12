@@ -20,6 +20,16 @@ static std::vector<std::string> SplitString(const std::string& str, char delim)
     return result;
 }
 
+static std::string GetFileAsString(const std::string& filename)
+{
+    std::ifstream file("input.txt", std::ifstream::in);
+
+    std::stringbuf buffer;
+    file.get(buffer, EOF);
+
+    return buffer.str();
+}
+
 static std::vector<std::string> GetLinesFromFile(const std::string& filename, bool clearTrailingWhitespace = true)
 {
 

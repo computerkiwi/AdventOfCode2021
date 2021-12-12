@@ -11,7 +11,7 @@ void Day10();
 
 int main()
 {
-	Day5();
+	Day8();
 
 	return 0;
 }
